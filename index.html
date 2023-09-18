@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Crédito</title>
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <h1>Simulador de Créditos Personales</h1>
+
+    <label for="monto">Monto a solicitar:</label>
+    <input type="number" id="monto" min="1" required>
+
+    <label for="tasa">Tasa de interés:</label>
+    <select id="tasa">
+        <option value="0.05">5%</option>
+        <option value="0.10">10%</option>
+        <option value="0.15">15%</option>
+    </select>
+
+    <label for="cuotas">Número de cuotas:</label>
+    <select id="cuotas">
+        <option value="12">12 cuotas</option>
+        <option value="24">24 cuotas</option>
+        <option value="48">48 cuotas</option>
+    </select>
+
+    <button onclick=simuladorCredito.calcularCuotas()>Calcular</button>
+
+    <h2>Resultado:</h2>
+    <p>Monto a devolver: <span id="totalAPagar"></span></p>
+    <p>Valor de la cuota: <span id="cuotaMensual"></span></p>
+
+    <h2>Datos personales:</h2>
+    <form id="formulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" required>
+
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" required>
+
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" required>
+
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" id="correo" required>
+
+        <input type="submit" value="Guardar Datos">
+    </form>
+</body>
+
+</html>
