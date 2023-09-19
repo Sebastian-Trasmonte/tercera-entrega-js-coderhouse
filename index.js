@@ -1,5 +1,7 @@
+var prestamos = []
 var simuladorCredito = {
-    prestamosAnteriores: [],
+    prestamoActual: {},
+
 
     calcularCuotas: function () {
         var monto = parseFloat(document.getElementById("monto").value)
@@ -10,34 +12,44 @@ var simuladorCredito = {
         var cuotaMensual = totalAPagar / cuotas
 
 
-        var prestamoActual = {
+        prestamoActual = {
             monto: monto,
             tasa: tasa,
             plazo: cuotas,
             cuota: cuotaMensual,
             total: totalAPagar
         };
-        this.prestamosAnteriores.push(prestamoActual);
 
 
-        document.getElementById("totalAPagar").textContent = totalAPagar;
-        document.getElementById("cuotaMensual").textContent = cuotaMensual;
+        document.getElementById("totalAPagar").textContent = totalAPagar.toFixed(2);
+        document.getElementById("cuotaMensual").textContent = cuotaMensual.toFixed(2);
     }
-}
+    document.getElementById("formulario").addEventListener("submit", (e) => {
 
 
-/*     buscarPorMonto: function (monto) {
-        return this.prestamosAnteriores.map(function (prestamo) {
-            if (prestamo.monto === monto) {
-                return prestamo;
-            } else {
-                return null;
-            }
-        }).filter(function (prestamo) {
-            return prestamo !== null;
-        });
-    }
-}; */
+
+        prestamos.push(simuladorCredito.prestamoActual);
+        console.log(prestamos)
+    })
+};
+
+
+
+/* function buscarPordni() {
+    return this.prestamosAnteriores.map(function (prestamo) {
+        if (prestamo.monto === monto) {
+            return prestamo;
+        } else {
+            return null;
+        }
+    }).filter(function (prestamo) {
+        return prestamo !== null;
+    });
+} */
+
+
+
+
 /* let lista = true
 
 while (lista) {

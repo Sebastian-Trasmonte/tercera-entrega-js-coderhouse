@@ -19,6 +19,9 @@
         <option value="0.05">5%</option>
         <option value="0.10">10%</option>
         <option value="0.15">15%</option>
+        <option value="0.20">20%</option>
+        <option value="0.25">25%</option>
+        <option value="0.30">30%</option>
     </select>
 
     <label for="cuotas">Número de cuotas:</label>
@@ -29,6 +32,7 @@
     </select>
 
     <button onclick=simuladorCredito.calcularCuotas()>Calcular</button>
+
 
     <h2>Resultado:</h2>
     <p>Monto a devolver: <span id="totalAPagar"></span></p>
@@ -53,6 +57,7 @@
 
         <input type="submit" value="Guardar Datos">
     </form>
+    <button onclick=simuladorCredito.buscarPordni()>Buscar</button>
 </body>
 
 </html>
